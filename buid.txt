@@ -2,3 +2,12 @@ cd ctp/lib
 
 go build -tags windows
 go build -x -v  # 查看详细编译命令
+
+# 清除所有构建缓存
+go clean -cache
+
+# 清除安装的包对象（如 vendor 目录）
+go clean -i
+
+# 清除测试缓存
+go clean -testcache

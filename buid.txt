@@ -1,0 +1,4 @@
+cd ctp/lib
+
+go build -tags windows
+go build -x -v  # 查看详细编译命令

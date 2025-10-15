@@ -2237,7 +2237,7 @@ int TTSCTPTraderSpi::ReqUserLogin(CThostFtdcReqUserLoginField* pReqUserLoginFiel
 #else
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID, 0, nullptr);
 #endif
-#elif __linux__
+#elif defined(__linux__) || defined(_WIN32) || defined(_WIN64)
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID);
 #endif
 }
@@ -2254,7 +2254,7 @@ int TTSCTPTraderSpi::ReqUserLogin(CThostFtdcReqUserLoginField* pReqUserLoginFiel
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID, length, systemInfo);
 #endif
 
-#elif __linux__
+#elif defined(__linux__) || defined(_WIN32) || defined(_WIN64)
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID);
 #endif
 }

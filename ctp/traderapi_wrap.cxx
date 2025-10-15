@@ -1823,7 +1823,7 @@ int QCTPTraderSpi::ReqUserLogin(CThostFtdcReqUserLoginField* pReqUserLoginField,
 {
 #ifdef __APPLE__
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID, 0, NULL);
-#elif __linux__
+#elif defined(__linux__) || defined(_WIN32) || defined(_WIN64)
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID);
 #endif
 }
@@ -1834,7 +1834,7 @@ int QCTPTraderSpi::ReqUserLogin(CThostFtdcReqUserLoginField* pReqUserLoginField,
 {
 #ifdef __APPLE__
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID, length, systemInfo);
-#elif __linux__
+#elif defined(__linux__) || defined(_WIN32) || defined(_WIN64)
     return this->pUserApi->ReqUserLogin(pReqUserLoginField, nRequestID);
 #endif
 }
